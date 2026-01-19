@@ -34,7 +34,7 @@ function renderHero(info) {
     const container = document.getElementById("hero-container");
     container.innerHTML = `
         <section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center" 
-                 style="background-image: linear-gradient(rgba(45, 27, 20, 0.6), rgba(45, 27, 20, 0.6)), url('https://images.unsplash.com/photo-1559056199-641a0ac8b3f4?w=1600&h=900&fit=crop');">
+                 style="background-image: linear-gradient(rgba(45, 27, 20, 0.6), rgba(45, 27, 20, 0.6)), url('https://images.unsplash.com/photo-1692342574979-33e3972e4b40?w=1600&h=900&fit=crop');">
             <div class="text-center text-white px-6">
                 <h2 class="text-6xl font-extrabold mb-6 leading-tight">${info.tagline}</h2>
                 <p class="text-2xl mb-8 text-latte max-w-2xl mx-auto">${info.description}</p>
@@ -68,16 +68,18 @@ function renderValues() {
                 <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto text-lg">${shopInfo.story}</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     ${valuesHTML}
-   ========================================
+                </div>
+            </div>
+        </section>`;
+}
+
+// ========================================
 // ASYNC/AWAIT (ES2017+)
 // Fetches and displays signature drinks with images, descriptions, and order buttons.
 // Async/await provides a cleaner, more readable way to handle asynchronous operations compared to
 // traditional .then() chains. The code reads like synchronous logic, making it easier to understand
 // and maintain, especially when dealing with multiple async operations.
 // ========================================
-            </div>
-        </section>`;
-}
 
 // Function to build the Menu Section with Featured Items
 async function renderMenu() {
@@ -106,16 +108,18 @@ async function renderMenu() {
                 <h2 class="text-4xl font-bold text-center text-espresso mb-4">Signature Drinks</h2>
                 <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto">Hand-crafted beverages made with passion and precision</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-   ========================================
+                    ${menuHTML}
+                </div>
+            </div>
+        </section>`;
+}
+
+// ========================================
 // TEMPLATE LITERALS & DYNAMIC CONTENT INJECTION
 // Creates a contact form and location display with embedded map and business information.
 // Template literals with multi-line strings keep HTML structure intact and readable,
 // while variable interpolation keeps data binding explicit and maintainable.
 // ========================================
-                </div>
-            </div>
-        </section>`;
-}
 
 // Function to build the Contact & Location Section
 function renderContact() {
@@ -236,19 +240,19 @@ function renderFooter() {
         </footer>`;
 }
 
-// The "Main" function that executes everything
-async function initializeWebsite() {
-    renderHeader(shopInfo);
-    renderHero(shopInfo);
-    renderValues();
-    await renderMenu();
-    renderContact();
 // ========================================
 // COMPOSITION PATTERN & ASYNC FLOW CONTROL
 // Coordinates all render functions to build the complete website in proper order.
 // Async function allows us to properly await the menu rendering without blocking other sections,
 // while the modular function composition makes each feature independent and testable.
 // ========================================
+async function initializeWebsite() {
+    renderHeader(shopInfo);
+    renderHero(shopInfo);
+    renderValues();
+    await renderMenu();
+    renderContact();
+    renderFooter();
     
     console.log("✓ Website successfully rendered with all sections!");
 }

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-espresso: #2D1B14;
+  --color-latte: #E3D5CA;
+  --color-caramel: #C9A876;
+}
