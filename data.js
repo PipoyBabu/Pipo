@@ -21,7 +21,7 @@ export const signatureDrinks = [
         name: "Ethiopia Dream",
         price: "₱220",
         description: "Notes of blueberry & chocolate with a clean finish. Single-origin pour-over.",
-        image: "https://images.unsplash.com/photo-1447933601403-0c6688de4d4d?w=500&h=500&fit=crop"
+        image: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=500&h=500&fit=crop"
     },
     {
         name: "Tondo Espresso",
@@ -39,7 +39,7 @@ export const signatureDrinks = [
         name: "Dirty Matcha",
         price: "₱210",
         description: "Creamy matcha blend with a double shot of espresso. The perfect blend.",
-        image: "https://images.unsplash.com/photo-1611854779396-5def8dd3a126?w=500&h=500&fit=crop"
+        image: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=500&h=500&fit=crop"
     }
 ];
 

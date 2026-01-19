@@ -1,6 +1,11 @@
 import { shopInfo, valuePropositions, fetchMenu } from "./data.js";
 
-// Function to build the Header
+// ========================================
+// TEMPLATE LITERALS (ES2015+)
+// Renders the sticky navigation bar with shop title and menu links.
+// Template literals with ${} allow seamless HTML structure with dynamic values,
+// avoiding string concatenation mess and improving readability significantly.
+// ========================================
 function renderHeader(info) {
     const container = document.getElementById("header-container");
     container.innerHTML = `
@@ -19,7 +24,12 @@ function renderHeader(info) {
         </header>`;
 }
 
-// Function to build the Hero Section
+// ========================================
+// CONST & ARROW FUNCTIONS (ES2015+)
+// Creates a full-screen banner with the shop's tagline, description, and call-to-action button.
+// Using const ensures immutability for the container reference, preventing accidental reassignment
+// which helps maintain code stability in larger applications.
+// ========================================
 function renderHero(info) {
     const container = document.getElementById("hero-container");
     container.innerHTML = `
@@ -35,7 +45,12 @@ function renderHero(info) {
         </section>`;
 }
 
-// Function to build the Value Proposition Section
+// ========================================
+// ARRAY MAP METHOD & ARROW FUNCTIONS (ES2015+)
+// Displays why customers should choose Tondo Beans with an icon grid layout.
+// The map() method transforms each value proposition object into HTML, providing a cleaner
+// functional approach than traditional for-loops and making the code intent immediately clear.
+// ========================================
 function renderValues() {
     const container = document.getElementById("value-container");
     const valuesHTML = valuePropositions.map(v => `
@@ -53,7 +68,13 @@ function renderValues() {
                 <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto text-lg">${shopInfo.story}</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     ${valuesHTML}
-                </div>
+   ========================================
+// ASYNC/AWAIT (ES2017+)
+// Fetches and displays signature drinks with images, descriptions, and order buttons.
+// Async/await provides a cleaner, more readable way to handle asynchronous operations compared to
+// traditional .then() chains. The code reads like synchronous logic, making it easier to understand
+// and maintain, especially when dealing with multiple async operations.
+// ========================================
             </div>
         </section>`;
 }
@@ -85,7 +106,12 @@ async function renderMenu() {
                 <h2 class="text-4xl font-bold text-center text-espresso mb-4">Signature Drinks</h2>
                 <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto">Hand-crafted beverages made with passion and precision</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    ${menuHTML}
+   ========================================
+// TEMPLATE LITERALS & DYNAMIC CONTENT INJECTION
+// Creates a contact form and location display with embedded map and business information.
+// Template literals with multi-line strings keep HTML structure intact and readable,
+// while variable interpolation keeps data binding explicit and maintainable.
+// ========================================
                 </div>
             </div>
         </section>`;
@@ -168,7 +194,12 @@ function renderContact() {
         </section>`;
 }
 
-// Function to build the Footer
+// ========================================
+// OBJECT METHODS & DATE FORMATTING
+// Renders the footer with company info, quick links, social media, and copyright notice.
+// Using getFullYear() keeps the copyright year automatically updated, eliminating the need
+// for manual maintenance—a small but important detail for professional websites.
+// ========================================
 function renderFooter() {
     const container = document.getElementById("footer-container");
     const year = new Date().getFullYear();
@@ -212,7 +243,12 @@ async function initializeWebsite() {
     renderValues();
     await renderMenu();
     renderContact();
-    renderFooter();
+// ========================================
+// COMPOSITION PATTERN & ASYNC FLOW CONTROL
+// Coordinates all render functions to build the complete website in proper order.
+// Async function allows us to properly await the menu rendering without blocking other sections,
+// while the modular function composition makes each feature independent and testable.
+// ========================================
     
     console.log("✓ Website successfully rendered with all sections!");
 }
