@@ -2,17 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1 id="title"></h1>
-    <p id="desc"></p>
-    <ul id="menu"></ul>
-    <script type="module" src="main.js">
-        loadMenu();
+    <title>Tondo Beans - Artisanal Coffee Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#2D1B14',
+                        latte: '#E3D5CA',
+                        caramel: '#C9A876'
+                    }
+                }
+            }
+        }
     </script>
+</head>
+<body class="bg-stone-50">
+
+    <div id="header-container"></div>
     
+    <main>
+        <div id="hero-container"></div>
+        <div id="value-container"></div>
+        <div id="menu-container"></div>
+        <div id="contact-container"></div>
+    </main>
+
+    <footer id="footer-container"></footer>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
